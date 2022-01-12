@@ -1,8 +1,8 @@
-const http = require('http');
+const express = require('express');
 
-const server = http.createServer((req, res) => {
-    res.end('Hi :v')
-})
+const app = express();
 
-server.listen(3000);
-console.log('Servidor en puerto 3000');
+app.get('/', (req, res) => res.send('Hi: v'))
+
+app.listen(3000);
+console.log('Servidor en puerto 3000')
