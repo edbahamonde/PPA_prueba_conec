@@ -1,24 +1,17 @@
 {
-  "name": "PPA_prueba_conec",
+  "name": "sendemail",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "sending email through node js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edbahamonde/PPA_prueba_conec.git"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "Subrat",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/edbahamonde/PPA_prueba_conec/issues"
-  },
-  "homepage": "https://github.com/edbahamonde/PPA_prueba_conec#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "nodemailer": "^5.1.1"
   }
 }
