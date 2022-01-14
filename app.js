@@ -38,13 +38,14 @@ app.post("/sendmail", (req, res) => {
 
 async function sendMail(user, callback) {
   let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false, 
+    port: 465,
+    host: process.env.AWS_REGION,
+    secure: true, 
     auth: {
       user: details.email,
       pass: details.password
-    }
+    },
+    debug: true
   });
 
   let mailOptions = {
