@@ -16,7 +16,7 @@ const senderAddress = "javelasco5@espe.edu.ec";
 // Replace recipient@example.com with a "To" address. If your account
 // is still in the sandbox, this address must be verified. To specify
 // multiple addresses, separate each address with a comma.
-var toAddresses = "edbahamonde@espe.edu.ec";
+var toAddresses = "vishhodavids10@gmail.com";
 
 // CC and BCC addresses. If your account is in the sandbox, these
 // addresses have to be verified. To specify multiple addresses, separate
