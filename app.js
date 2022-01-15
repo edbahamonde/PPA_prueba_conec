@@ -5,6 +5,13 @@ const nodemailer = require("nodemailer");
 
 const details = require("./details.json");
 
+const smtEndpoint = "email-smtp.sa-east-1.amazonaws.com";
+const port = 587;
+const smtpUsername = "";
+const smtpPassword = "";
+var tag0 = "key0=value0";
+var tag1 = "key1=value1";
+
 const app = express();
 app.use(cors({ origin: "*" }));
 app.use((req, res, next) => {
@@ -38,9 +45,9 @@ app.post("/sendmail", (req, res) => {
 
 async function sendMail(user, callback) {
   let transporter = nodemailer.createTransport({
-    port: 465,
-    host: process.env.AWS_REGION,
-    secure: true, 
+    port: port,
+    host: smtEndpoint,
+    secure: false, 
     auth: {
       user: details.email,
       pass: details.password
@@ -62,10 +69,16 @@ async function sendMail(user, callback) {
         pagará únicamente el valor de $${user.costoTotal} </p>
 
     <h4>¡Gracias por preferirnos!🎅</h4>
-    <h5>Si tienes dudas, contáctate con nosotros.</h5>`
+    <h5>Si tienes dudas, contáctate con nosotros.</h5>`,
+    headers: {
+      'X-SES-MESSAGE-TAGS': tag0,
+      'X-SES-MESSAGE-TAGS': tag1
+    }
   };
 
   let info = await transporter.sendMail(mailOptions);
 
   callback(info);
 }
+
+main().catch(console.error);
