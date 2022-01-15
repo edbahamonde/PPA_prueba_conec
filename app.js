@@ -28,9 +28,6 @@ const smtpUsername = "AKIAUGLYP7UW3EHZPNHA";
 // Replace smtp_password with your Amazon SES SMTP password.
 const smtpPassword = "BOMwyOe9nXKe7f8UyJRG2yOaQhMpEio/69eiZvMcKgML";
 
-// (Optional) the name of a configuration set to use for this message.
-var configurationSet = "ConfigSet";
-
 // The subject line of the email
 var subject = "Amazon SES test (Nodemailer)";
 
@@ -76,7 +73,6 @@ async function main(){
     html: body_html,
     // Custom headers for configuration set and message tags.
     headers: {
-      'X-SES-CONFIGURATION-SET': configurationSet,
       'X-SES-MESSAGE-TAGS': tag0,
       'X-SES-MESSAGE-TAGS': tag1
     }
