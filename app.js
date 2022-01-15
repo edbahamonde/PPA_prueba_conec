@@ -7,13 +7,20 @@ const details = require("./details.json");
 
 const smtEndpoint = "email-smtp.sa-east-1.amazonaws.com";
 const port = 535;
-const smtpUsername = "";
-const smtpPassword = "";
+const smtpUsername = "AKIAUGLYP7UW3EHZPNHA";
+const smtpPassword = "BOMwyOe9nXKe7f8UyJRG2yOaQhMpEio/69eiZvMcKgML";
 var tag0 = "key0=value0";
 var tag1 = "key1=value1";
 
 const app = express();
 app.use(cors({ origin: "*" }));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
 
 app.use(bodyParser.json());
 
@@ -42,8 +49,8 @@ async function sendMail(user, callback) {
     host: smtEndpoint,
     secure: false, 
     auth: {
-      user: details.email,
-      pass: details.password
+      user: smtpUsername,
+      pass: smtpPassword
     },
     debug: true
   });
