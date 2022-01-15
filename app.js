@@ -11,7 +11,7 @@ const port = 587;
 
 // Replace sender@example.com with your "From" address.
 // This address must be verified with Amazon SES.
-const senderAddress = "javelasco10@espe.edu.ec";
+const senderAddress = "javelasco5@espe.edu.ec";
 
 // Replace recipient@example.com with a "To" address. If your account
 // is still in the sandbox, this address must be verified. To specify
