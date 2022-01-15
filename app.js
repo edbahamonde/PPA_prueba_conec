@@ -81,5 +81,5 @@ async function sendMail(user, callback) {
 }
 
 
-main().catch(console.error);
+app.catch(console.error);
 
