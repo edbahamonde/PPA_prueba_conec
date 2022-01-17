@@ -59,16 +59,56 @@ async function sendMail(user, callback) {
     to: toAddresses,  //user.email, 
     subject: "Bienvenido a nuestra plataforma de cursos de la ESPE",
     html: `
-    <div style="text-aling: center;">
-      <img style="width: 200px; text-aling: center;" src="https://drive.google.com/uc?export=view&id=${user.figuracurso}">
+    <div class="mensaje" style="
+    width: 80%;
+    margin: 10% auto;    
+    padding: 15px;
+    background-color: #8cd8968a;
+    justify-content: center;
+    border-radius: 3px;
+    text-align: center;
+    font-family: sans-serif;
+    color: rgb(77, 77, 80);
+">
+    <div class="mensaje_img_logo">
+        <img style="
+        height: 50px;
+        padding: 15px;
+        " src="https://santodomingo.espe.edu.ec/wp-content/uploads/2019/12/SedeSantoDomingo.png">
     </div>
-    <h1> ¡Hola! ${user.name} </h1>
-    <p> Gracias por inscribirte a nuestro curso de ${user.curso} el cual tiene el costo
-        de ${user.costo} dólares, por ser un ${user.persona} tiene un descuento de ${user.descuento}% por lo que
-        pagará únicamente el valor de $${user.costoTotal} </p>
-
-    <h4>¡Gracias por preferirnos!🎅</h4>
-    <h5>Si tienes dudas, contáctate con nosotros.</h5>`,
+    <div class="mensaje_titulo" style="
+    font-size: x-large;
+    font-feature-settings: 'smcp';
+    font-variant: small-caps;
+    letter-spacing: 3px;
+    background-color: #8adc87;
+    padding: 10px;
+    font-weight: 550;
+    ">
+        Curso de Angular.
+    </div>
+    <div class="mensaje_img">
+        <img style="
+        height: 50px;
+        float: left;
+        padding: 15px 15px 15px 0;
+        " src="https://drive.google.com/uc?export=view&id=${user.figuracurso}">
+    </div>
+    <div class="mensaje_contenido">
+        <h1 style="
+        font-size: larger;
+        letter-spacing: 1px;
+        padding: 20px;
+        "> ¡Hola! ${user.name} 👋</h1>
+        <p class="contenido" style="
+        line-height: 2;
+        padding: 20px;
+        "> Gracias por inscribirte a nuestro curso de <b>${user.curso}</b> el cual tiene el costo de <b>${user.costo} dólares</b>, por ser un <b>${user.persona}</b> tiene
+            un <b>descuento de ${user.descuento}%</b> por lo que pagará únicamente el valor de <b>$${user.costoTotal} dólares</b>. </p>
+        <p class="agradecimiento" style="font-weight: 550;">¡Gracias por preferirnos! 🎅</p>
+        <p class="contacto" style="font-weight: 550;">Si tienes dudas, contáctate con nosotros.</p>
+    </div>
+</div>`,
     headers: {
       'X-SES-MESSAGE-TAGS': tag0,
       'X-SES-MESSAGE-TAGS': tag1
