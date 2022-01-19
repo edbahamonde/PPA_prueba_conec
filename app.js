@@ -103,7 +103,7 @@ async function sendMail(user, callback) {
         <p class="contenido" style="
         line-height: 2;
         padding: 20px;
-        "> Gracias por inscribirte a nuestro curso de <b>${user.curso}</b> el cual tiene el costo de <b>${user.costo} dólares</b>, por ser un <b>${user.persona}</b> tiene
+        "> Gracias por inscribirte a nuestro curso de <b>${user.curso}</b> el cual tiene el costo de $ <b>${user.costo} dólares</b>, por ser un <b>${user.persona}</b> tiene
             un <b>descuento de ${user.descuento}%</b> por lo que pagará únicamente el valor de <b>$${user.costoTotal} dólares</b>. </p>
         <p class="agradecimiento" style="font-weight: 550;">¡Gracias por preferirnos! 🎅</p>
         <p class="contacto" style="font-weight: 550;">Si tienes dudas, contáctate con nosotros.</p>
