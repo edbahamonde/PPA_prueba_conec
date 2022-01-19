@@ -121,5 +121,3 @@ async function sendMail(user, callback) {
 }
 
 
-app.catch(console.error);
-
