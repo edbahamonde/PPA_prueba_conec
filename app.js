@@ -56,7 +56,7 @@ async function sendMail(user, callback) {
 
   let mailOptions = {
     from: senderAddress, //'"👋¡REGISTRO Existoso!📩"<example.gimail.com>', 
-    to: toAddresses,  //user.email, 
+    to: user.email, 
     subject: "Bienvenido a nuestra plataforma de cursos de la ESPE",
     html: `
     <div class="mensaje" style="
