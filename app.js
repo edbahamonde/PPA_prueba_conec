@@ -85,7 +85,7 @@ async function sendMail(user, callback) {
     padding: 10px;
     font-weight: 550;
     ">
-        Curso de Angular.
+        Curso de ${user.curso}.
     </div>
     <div class="mensaje_img">
         <img style="
